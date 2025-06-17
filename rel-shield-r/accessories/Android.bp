@@ -1,0 +1,115 @@
+filegroup {
+  name: "AccessoryUiTv-srcs",
+  srcs: ["app/AccessoryUiTv.apk"],
+}
+
+filegroup {
+  name: "NvAccessories-srcs",
+  srcs: ["app/NvAccessories.apk"],
+}
+
+filegroup {
+  name: "NvAccProxy-srcs",
+  srcs: ["app/NvAccProxy.apk"],
+}
+
+filegroup {
+  name: "NvCustomize-srcs",
+  srcs: ["app/NvCustomize.apk"],
+}
+
+filegroup {
+  name: "NvShieldService-srcs",
+  srcs: ["app/NvShieldService.apk"],
+}
+
+filegroup {
+  name: "lota_32-srcs",
+  srcs: ["bin32/lota"],
+}
+
+cc_defaults {
+  name: "lota_32-defaults",
+  target: {
+    android_arm: {
+      srcs: [":lota_32-srcs"],
+      shared_libs: ["libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "lota_64-srcs",
+  srcs: ["bin64/lota"],
+}
+
+cc_defaults {
+  name: "lota_64-defaults",
+  target: {
+    android_arm64: {
+      srcs: [":lota_64-srcs"],
+      shared_libs: ["libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "libfirmwareupdate_64-srcs",
+  srcs: ["lib64/libfirmwareupdate.so"],
+}
+
+cc_defaults {
+  name: "libfirmwareupdate_64-defaults",
+  target: {
+    android_arm64: {
+      srcs: [":libfirmwareupdate_64-srcs"],
+      shared_libs: ["libhardware", "libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "libhidraw_64-srcs",
+  srcs: ["lib64/libhidraw.so"],
+}
+
+cc_defaults {
+  name: "libhidraw_64-defaults",
+  target: {
+    android_arm64: {
+      srcs: [":libhidraw_64-srcs"],
+      shared_libs: ["libhardware", "libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "libfirmwareupdate_32-srcs",
+  srcs: ["lib/libfirmwareupdate.so"],
+}
+
+cc_defaults {
+  name: "libfirmwareupdate_32-defaults",
+  target: {
+    android_arm: {
+      srcs: [":libfirmwareupdate_32-srcs"],
+      shared_libs: ["libhardware", "libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "libhidraw_32-srcs",
+  srcs: ["lib/libhidraw.so"],
+}
+
+cc_defaults {
+  name: "libhidraw_32-defaults",
+  target: {
+    android_arm: {
+      srcs: [":libhidraw_32-srcs"],
+      shared_libs: ["libhardware", "libutils", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+

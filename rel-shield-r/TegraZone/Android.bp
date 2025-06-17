@@ -1,0 +1,5 @@
+filegroup {
+  name: "TegraZone_Next-srcs",
+  srcs: ["app/TegraZone_Next.apk"],
+}
+

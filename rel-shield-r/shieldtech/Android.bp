@@ -1,0 +1,65 @@
+filegroup {
+  name: "NvShieldTech-srcs",
+  srcs: ["app/NvShieldTech.apk"],
+}
+
+filegroup {
+  name: "vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service_32-srcs",
+  srcs: ["bin32/hw/vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service"],
+}
+
+cc_defaults {
+  name: "vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service_32-defaults",
+  target: {
+    android_arm: {
+      srcs: [":vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service_32-srcs"],
+      shared_libs: ["vendor.nvidia.hardware.shieldtech.inputflinger@2.0", "vendor.nvidia.hardware.shieldtech.input@1.0", "libhidlbase", "libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service_64-srcs",
+  srcs: ["bin64/hw/vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service"],
+}
+
+cc_defaults {
+  name: "vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service_64-defaults",
+  target: {
+    android_arm64: {
+      srcs: [":vendor.nvidia.hardware.shieldtech.inputflinger@2.0-service_64-srcs"],
+      shared_libs: ["vendor.nvidia.hardware.shieldtech.inputflinger@2.0", "vendor.nvidia.hardware.shieldtech.input@1.0", "libhidlbase", "libcutils", "libutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "vendor.nvidia.hardware.shieldtech.rpx@1.0-service_32-srcs",
+  srcs: ["bin32/hw/vendor.nvidia.hardware.shieldtech.rpx@1.0-service"],
+}
+
+cc_defaults {
+  name: "vendor.nvidia.hardware.shieldtech.rpx@1.0-service_32-defaults",
+  target: {
+    android_arm: {
+      srcs: [":vendor.nvidia.hardware.shieldtech.rpx@1.0-service_32-srcs"],
+      shared_libs: ["vendor.nvidia.hardware.shieldtech.rpx@1.0", "libhidlbase", "libbinder", "libcutils", "liblog", "libutils", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
+filegroup {
+  name: "vendor.nvidia.hardware.shieldtech.rpx@1.0-service_64-srcs",
+  srcs: ["bin64/hw/vendor.nvidia.hardware.shieldtech.rpx@1.0-service"],
+}
+
+cc_defaults {
+  name: "vendor.nvidia.hardware.shieldtech.rpx@1.0-service_64-defaults",
+  target: {
+    android_arm64: {
+      srcs: [":vendor.nvidia.hardware.shieldtech.rpx@1.0-service_64-srcs"],
+      shared_libs: ["vendor.nvidia.hardware.shieldtech.rpx@1.0", "libhidlbase", "libbinder", "libcutils", "liblog", "libutils", "libc++", "libc", "libm", "libdl", ],
+    },
+  },
+}
+
